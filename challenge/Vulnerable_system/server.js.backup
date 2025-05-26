@@ -18,8 +18,7 @@ let users = [
         personalData: {
             creditCard: "4539-7894-5698-1234",
             codiceFiscale: "RSSMRA80A01H501U",
-            iban: "IT60X0542811101000000123456",
-            secretData: 'FLAG{ciriciao}'
+            iban: "IT60X0542811101000000123456"
         }
     },
     { 
@@ -99,19 +98,6 @@ app.get('/api/admin/users', authenticate, (req, res) => {
     } else {
         res.status(403).json({ message: 'Accesso negato' });
     }
-});
-
-// Nuovo endpoint flag solo per admin
-app.get('/api/admin/flag', authenticate, (req, res) => {
-    if (req.user.role !== 'admin') {
-        return res.status(403).json({ error: 'Admin access required' });
-    }
-    
-    res.json({ 
-        message: 'Congratulations! You found the admin flag!',
-        flag: 'FLAG{jwt_admin_escalation_2024}',
-        adminSecret: 'FLAG{complete_access_control_bypass}'
-    });
 });
 
 // API per eliminare un utente (solo admin)
