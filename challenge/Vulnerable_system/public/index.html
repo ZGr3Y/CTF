@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Broken Access Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vulnerable system</h1>
+        
+        <div id="login">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Accedi</button>
+            <p id="loginMessage"></p>
+        </div>
+
+        <div id="dashboard" style="display: none;">
+            <h2>I Tuoi Dati Personali</h2>
+            <div id="userData"></div>
+            <button onclick="accessAdminPanel()">Admin Panel</button>
+
+            <div id="adminPanel" style="display: none;">
+                <h2>Pannello Amministratore</h2>
+                <div id="usersList"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
