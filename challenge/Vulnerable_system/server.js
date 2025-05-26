@@ -4,7 +4,23 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = 3000;
 const SECRET_KEY = ' ';
-const HOST = '0.0.0.0';
+const HOST = '192.168.1.69';
+
+const os = require('os');
+
+function getLocalIP() {
+    const interfaces = os.networkInterfaces();
+    for (const name of Object.keys(interfaces)) {
+        for (const iface of interfaces[name]) {
+            if (iface.family === 'IPv4' && !iface.internal && 
+                iface.address.startsWith('192.168.1.')) {
+                return iface.address;
+            }
+        }
+    }
+    return '0.0.0.0';
+}
+
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -41,7 +57,8 @@ let users = [
         personalData: {
             creditCard: "4532-7891-2345-6789",
             codiceFiscale: "BRNGNN82C14H501W",
-            iban: "IT60X0542811101000000456789"
+            iban: "IT60X0542811101000000456789",
+            secretData: 'FLAG{circocentrifugoo}'
         }
     }
 ];
@@ -135,6 +152,7 @@ app.delete('/api/admin/users/:userId', authenticate, (req, res) => {
     res.json({ message: 'Utente eliminato con successo' });
 });
 
-app.listen(PORT, HOST, () => {
-    console.log(`Server in ascolto su http://${HOST}:${PORT}`);
+const myIP = getLocalIP();
+app.listen(PORT, myIP, () => {
+    console.log(`Server in ascolto su http://${myIP}:${PORT}`);
 });
