@@ -35,7 +35,7 @@ let users = [
             creditCard: "4539-7894-5698-1234",
             codiceFiscale: "RSSMRA80A01H501U",
             iban: "IT60X0542811101000000123456",
-            secretData: 'FLAG{ciriciao}'
+            secretData: 'FLAG{b95021d243e1393ee4faff288fe139580c502c76ab160dbbcf35941ad1f52667518e477403a1740897d91620ec3188b16e5a991c2e13318c5cb578226af1a6dc}'
         }
     },
     { 
@@ -50,7 +50,7 @@ let users = [
         }
     },
     { 
-        id: 3, 
+        id: 24, 
         username: 'sergio', 
         password: 'password2', 
         role: 'standard',
@@ -58,7 +58,7 @@ let users = [
             creditCard: "4532-7891-2345-6789",
             codiceFiscale: "BRNGNN82C14H501W",
             iban: "IT60X0542811101000000456789",
-            secretData: 'FLAG{circocentrifugoo}'
+            secretData: 'FLAG{b41f727ba869ae3a8ec465d208446ebde0922ce3c221908d41efa7b1821d56f559e55185e01dd9f3401737f301bb57bca343c423413c7b3795bd407e0e436b98}'
         }
     }
 ];

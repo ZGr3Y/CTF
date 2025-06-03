@@ -1,0 +1,28 @@
+services:
+  ctf-idor:
+    build: ./01-idor-waf
+    ports:
+      - "3003:3003"
+    container_name: ctf-idor
+    networks:
+      - ctf-network
+    
+  ctf-jwt:
+    build: ./02-jwt_injection
+    ports:
+      - "3007:3007"
+    container_name: ctf-jwt
+    networks:
+      - ctf-network
+    
+  ctf-path-traversal:
+    build: ./03-path-traversal
+    ports:
+      - "3010:3010"
+    container_name: ctf-path-traversal
+    networks:
+      - ctf-network
+
+networks:
+  ctf-network:
+    driver: bridge

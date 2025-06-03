@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankSecure Corp - JWT Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏦 BankSecure Corp</h1>
+            <h2>JWT Security Challenge</h2>
+        </header>
+
+        <!-- Login Section -->
+        <div id="loginSection" class="card">
+            <h3>🔐 Login</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" value="paolo" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" value="password1" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginMessage" class="message"></div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboardSection" class="card hidden">
+            <h3>📊 Dashboard</h3>
+            <div id="userInfo" class="info-box">
+                <p><strong>User:</strong> <span id="currentUser"></span></p>
+                <p><strong>Role:</strong> <span id="currentRole"></span></p>
+                <p><strong>Status:</strong> <span class="status-ok">Authenticated</span></p>
+            </div>
+            
+            <div class="actions">
+                <button onclick="loadUserData()">Load My Data</button>
+                <button onclick="accessAdminPanel()">Admin Panel</button>
+                <button onclick="tryJwtFlag()">🎯 Get JWT Flag</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- User Data Section -->
+        <div id="userDataSection" class="card hidden">
+            <h3>👤 User Data</h3>
+            <div id="userData" class="data-box"></div>
+        </div>
+
+        <!-- Admin Panel Section -->
+        <div id="adminSection" class="card hidden">
+            <h3>⚙️ Admin Panel</h3>
+            <div id="adminContent" class="data-box"></div>
+        </div>
+
+        <!-- JWT Flag Section -->
+        <div id="flagSection" class="card hidden">
+            <h3>🏆 JWT Challenge Result</h3>
+            <div id="flagResult" class="flag-box"></div>
+        </div>
+
+        <!-- Challenge Info -->
+        <div class="info-panel">
+            <h3>ℹ️ Challenge Info</h3>
+            <div class="challenge-info">
+                <p><strong>Goal:</strong> Access the admin JWT flag</p>
+                <p><strong>Target:</strong> GET /api/admin/jwt-flag</p>
+                <p><em>Use your penetration testing skills to find the vulnerability...</em></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

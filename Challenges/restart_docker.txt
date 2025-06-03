@@ -1,0 +1,5 @@
+# Rebuild tutte (più veloce del primo build)
+docker compose build
+
+# Restart tutto
+docker compose up -d
