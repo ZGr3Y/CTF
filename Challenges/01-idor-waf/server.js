@@ -5,7 +5,7 @@ const app = express();
 
 
 const PORT = 3003;
-const SECRET_KEY = 'your-super-secret-key-here'; // Cambiata da stringa vuota
+const SECRET_KEY = '28ef610f0acc8621c036933ef3ff7e27c367d06bbb7f0b0733cbf1c20af63d62aeaddae233093786ed33b22b2d9dbdf3ff017ac7d804403989188e9eab871abc'; // Cambiata da stringa vuota
 const HOST = '0.0.0.0';
 
 function wafMiddleware(req, res, next) {
@@ -49,9 +49,9 @@ app.use(express.static('public'));
 let users = [
     { 
         id: 37, 
-        username: 'giampaolo', 
-        password: 'adminpass', 
-        role: 'standard',
+        username: 'Sergio', 
+        password: 'pippo', 
+        role: 'admin',
         personalData: {
             creditCard: "4539-7894-5698-1234",
             codiceFiscale: "RSSMRA80A01H501U",
@@ -72,14 +72,14 @@ let users = [
     },
     { 
         id: 3, 
-        username: 'sergio', 
-        password: 'password2', 
-        role: 'admin',
+        username: 'Giampaolo', 
+        password: 'adminpass80', 
+        role: 'standard',
         personalData: {
             creditCard: "4532-7891-2345-6789",
             codiceFiscale: "BRNGNN82C14H501W",
             iban: "IT60X0542811101000000456789",
-            hint:"That's not the right account, keep going!"
+            hint:"se solo questo fosse l'account giusto!"
         }
     }
 ];

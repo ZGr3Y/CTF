@@ -4,7 +4,7 @@ const crypto = require('crypto');
 
 const app = express();
 const PORT = 3010;
-const SECRET_KEY = ' ';
+const SECRET_KEY = '877e2ff60af622d440d73115c72401eb0c7728b481fbf3a8936e6a5ce1566080c9381048acacd8128f6cc6065f504b1bda1f673787aff4528df9374f84ab5dac';
 const HOST = '0.0.0.0';
 
 app.use(express.json());
@@ -41,7 +41,7 @@ let users = [
     { 
         id: 3, 
         username: 'sergio', 
-        password: 'orso', 
+        password: 'c4f830de47c37abf9b3e9922aef85763', 
         role: 'admin',
         personalData: {
             creditCard: "4532-7891-2345-6789",
