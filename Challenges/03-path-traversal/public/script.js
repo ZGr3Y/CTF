@@ -44,6 +44,7 @@ async function loadUserData(userId) {
                     <p><strong>Carta di Credito:</strong> ${data.personalData.creditCard}</p>
                     <p><strong>Codice Fiscale:</strong> ${data.personalData.codiceFiscale}</p>
                     <p><strong>IBAN:</strong> ${data.personalData.iban}</p>
+                    <p><strong>Flag:</strong> ${data.personalData.flag}</p>
                 </div>
             `;
         }

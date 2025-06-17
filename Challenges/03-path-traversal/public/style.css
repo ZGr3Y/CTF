@@ -135,6 +135,11 @@ button:active {
     color: #8b0000;
     font-weight: 700;
 }
+.data-box p {
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
 #adminPanel {
     margin-top: 40px;

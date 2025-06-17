@@ -24,7 +24,8 @@ let users = [
         personalData: {
             creditCard: "4539-7894-5698-1234",
             codiceFiscale: "RSSMRA80A01H501U",
-            iban: "IT60X0542811101000000123456"
+            iban: "IT60X0542811101000000123456",
+            flag:"{bb8fe507db893922a742babe76395bc4fb3529ee9c2befe4bc2b387a3caef637384680b0f3e749b5358ede1f16f2429004de4de1a330acf37551dccc6ab61427}"
         }
     },
     { 
@@ -35,7 +36,8 @@ let users = [
         personalData: {
             creditCard: "4532-1234-5678-9012",
             codiceFiscale: "VRDLGU85B15H501V",
-            iban: "IT60X0542811101000000789012"
+            iban: "IT60X0542811101000000789012",
+            flag: "{0d0d000f6aed27b0ac626f1dd105e32f05fb97cd41591337ce60173246b784d82b184d40c1db18027544ddcaa7bd5966b63a4001882059d3ddddc4aaaf7ba7c1}"
         }
     },
     { 
@@ -46,7 +48,8 @@ let users = [
         personalData: {
             creditCard: "4532-7891-2345-6789",
             codiceFiscale: "BRNGNN82C14H501W",
-            iban: "IT60X0542811101000000456789"
+            iban: "IT60X0542811101000000456789",
+            flag:" {941146560ecfc6e54a93014c3b5c951944635ddcdfafe6f8c26645e8300b17eb439485ae077f296ece656410c3187669c2432b969a0512dd0af28d969e6cf31d}"
         }
     }
 ];
