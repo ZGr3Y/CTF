@@ -16,8 +16,8 @@ function wafMiddleware(req, res, next) {
     
     // Pattern da bloccare
     const blockedPatterns = [
-        /\/api\/users\/37\/data/,  // Blocca accesso diretto a giampaolo
-        /\/api\/users\/3\/data/     // Blocca accesso a sergio (admin)
+        /\/api\/users\/37\/data/,  // Blocca accesso diretto a sergio (admin)
+        /\/api\/users\/3\/data/     // Blocca accesso a giampaolo
     ];
     
     // Check User-Agent

@@ -25,6 +25,7 @@ let users = [
             creditCard: "4539-7894-5698-1234",
             codiceFiscale: "RSSMRA80A01H501U",
             iban: "IT60X0542811101000000123456"
+            
         }
     },
     { 
@@ -36,17 +37,18 @@ let users = [
             creditCard: "4532-1234-5678-9012",
             codiceFiscale: "VRDLGU85B15H501V",
             iban: "IT60X0542811101000000789012"
+            
         }
     },
     { 
         id: 3, 
         username: 'sergio', 
-        password: 'orso', 
+        password: 'c4f830de47c37abf9b3e9922aef85763', 
         role: 'admin',
         personalData: {
             creditCard: "4532-7891-2345-6789",
             codiceFiscale: "BRNGNN82C14H501W",
-            iban: "IT60X0542811101000000456789"
+            iban: "IT60X0542811101000000456789"            
         }
     }
 ];
