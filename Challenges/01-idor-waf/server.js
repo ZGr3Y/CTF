@@ -23,7 +23,7 @@ function wafMiddleware(req, res, next) {
     // Check User-Agent
     if (userAgent.includes('burp') || userAgent.includes('sqlmap')) {
         return res.status(403).json({ 
-            message: "🛡️ WAF: Tool di scanning rilevato" 
+            message: "WAF: Tool di scanning rilevato" 
         });
     }
     
@@ -31,7 +31,7 @@ function wafMiddleware(req, res, next) {
     for (const pattern of blockedPatterns) {
         if (pattern.test(url)) {
             return res.status(403).json({ 
-                message: "🛡️ WAF: Accesso negato - Pattern sospetto" 
+                message: "WAF: Accesso negato - Pattern sospetto" 
             });
         }
     }
@@ -73,7 +73,7 @@ let users = [
     { 
         id: 3, 
         username: 'Giampaolo', 
-        password: 'adminpass80', 
+        password: 'paperon_de_paperoni', 
         role: 'standard',
         personalData: {
             creditCard: "4532-7891-2345-6789",
