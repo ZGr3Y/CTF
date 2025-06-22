@@ -15,11 +15,11 @@ services:
     networks:
       - ctf-network
     
-  ctf-path-traversal:
-    build: ./03-path-traversal
+  ctf-information-disclosure:
+    build: ./03-information_disclosure_AND_weak_crypto
     ports:
       - "3010:3010"
-    container_name: ctf-path-traversal
+    container_name: ctf-information-disclosure
     networks:
       - ctf-network
 

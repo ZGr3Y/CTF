@@ -31,7 +31,7 @@ echo "======================================="
 echo "🌐 Challenges available at:"
 echo "- IDOR Challenge: http://localhost:3003"
 echo "- JWT Challenge: http://localhost:3007"
-echo "- Path Traversal: http://localhost:3010"
+echo "- Information Disclosure: http://localhost:3010"
 echo "======================================="
 
 # Test connectivity

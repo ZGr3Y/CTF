@@ -28,8 +28,8 @@ let users = [
     { 
         id: 1, 
         username: 'giampaolo', 
-        password: 'adminpass', 
-        role: 'admin',
+        password: 'palazzolo_acreide', 
+        role: 'user',
         personalData: {
             creditCard: "4539-7894-5698-1234",
             codiceFiscale: "RSSMRA80A01H501U",
@@ -50,8 +50,8 @@ let users = [
     { 
         id: 3, 
         username: 'sergio', 
-        password: 'password2', 
-        role: 'user',
+        password: 'stefano_rapone', 
+        role: 'admin',
         personalData: {
             creditCard: "4532-7891-2345-6789",
             codiceFiscale: "BRNGNN82C14H501W",
