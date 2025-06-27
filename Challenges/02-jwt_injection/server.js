@@ -231,34 +231,6 @@ app.get('/admin', authenticate, (req, res) => {
     });
 });
 
-// Endpoint per compatibilità frontend (stesso risultato di /admin)
-app.get('/api/admin/jwt-flag', authenticate, (req, res) => {
-    console.log(`\n🎯 JWT FLAG ACCESS ATTEMPT:`);
-    console.log(`Subject: ${req.user.sub}`);
-    console.log(`Role: ${req.user.role}`);
-    console.log(`JWK Exploited: ${req.jwkExploited}`);
-
-    // Solo admin role può accedere
-    if (req.user.role !== 'admin') {
-        return res.status(403).json({
-            message: 'Admin panel access denied',
-            required_role: 'admin',
-            current_role: req.user.role,
-            current_user: req.user.sub
-        });
-    }
-
-    // Success - JWT Flag access
-    console.log(`🏆 JWT FLAG ACCESS GRANTED!`);
-    
-    res.json({
-        success: true,
-        flag: JWT_FLAG,
-        message: 'Congratulations! You successfully exploited RSA JWK Injection!',
-        technique: 'RSA JWK Injection',
-        exploit_used: req.jwkExploited ? 'RSA JWK Injection' : 'Legitimate Access'
-    });
-});
 
 // Endpoint per ottenere la chiave pubblica server (per reference)
 app.get('/jwks', (req, res) => {

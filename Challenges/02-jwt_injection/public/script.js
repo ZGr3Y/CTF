@@ -152,13 +152,13 @@ async function accessAdminPanel() {
     }
 }
 
-// JWT Flag attempt - CORRECTED Authorization header
+// JWT Flag attempt - now fetches the flag from /admin
 async function tryJwtFlag() {
     if (!token) return;
 
     try {
-        const response = await fetch('/api/admin/jwt-flag', {
-            headers: { 'Authorization': `Bearer ${token}` }  // FIXED: Added Bearer prefix
+        const response = await fetch('/admin', {
+            headers: { 'Authorization': `Bearer ${token}` }
         });
 
         const data = await response.json();
@@ -166,12 +166,11 @@ async function tryJwtFlag() {
         let flagHtml;
         let flagClass;
         
-        if (response.ok && data.success) {
+        if (response.ok && data.flag) {
             flagHtml = `
                 <div class="flag-success">
                     <h4>🏆 SUCCESS!</h4>
                     <p><strong>Flag:</strong> <code>${data.flag}</code></p>
-                    <p><strong>Technique:</strong> ${data.technique}</p>
                     <p><strong>Exploit Used:</strong> ${data.exploit_used}</p>
                     <p>${data.message}</p>
                 </div>
