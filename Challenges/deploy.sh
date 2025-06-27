@@ -8,7 +8,7 @@ echo "🛑 Stopping existing containers..."
 docker compose down
 
 # Remove old images (optional - uncomment if needed)
-# docker rmi ctf-idor ctf-jwt ctf-path-traversal 2>/dev/null || true
+# docker rmi ctf-idor ctf-jwt ctf-information-disclosure 2>/dev/null || true
 
 # Build all images
 echo "🔨 Building all CTF challenges..."
@@ -38,6 +38,6 @@ echo "======================================="
 echo "🧪 Testing connectivity..."
 curl -s -o /dev/null -w "IDOR (3003): %{http_code}\n" http://localhost:3003 || echo "IDOR (3003): Connection failed"
 curl -s -o /dev/null -w "JWT (3007): %{http_code}\n" http://localhost:3007 || echo "JWT (3007): Connection failed"
-curl -s -o /dev/null -w "Path Traversal (3010): %{http_code}\n" http://localhost:3010 || echo "Path Traversal (3010): Connection failed"
+curl -s -o /dev/null -w "Information Disclosure (3010): %{http_code}\n" http://localhost:3010 || echo "Information Disclosure (3010): Connection failed"
 
 echo "🎯 Ready for CTFd integration!"
