@@ -1,2 +1,2 @@
 # CTF
- CTF project for bacheleor degree
+ CTF project for bachelor degree
