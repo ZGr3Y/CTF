@@ -10,7 +10,7 @@ function showMessage(elementId, message, type = 'info') {
 
 function showSection(sectionId) {
     // Hide all sections
-    const sections = ['loginSection', 'dashboardSection', 'userDataSection', 'adminSection', 'flagSection'];
+    const sections = ['loginSection', 'dashboardSection', 'userDataSection', 'adminSection'];
     sections.forEach(id => {
         document.getElementById(id).classList.add('hidden');
     });
@@ -152,61 +152,6 @@ async function accessAdminPanel() {
     }
 }
 
-// JWT Flag attempt - now fetches the flag from /admin
-async function tryJwtFlag() {
-    if (!token) return;
-
-    try {
-        const response = await fetch('/admin', {
-            headers: { 'Authorization': `Bearer ${token}` }
-        });
-
-        const data = await response.json();
-        
-        let flagHtml;
-        let flagClass;
-        
-        if (response.ok && data.flag) {
-            flagHtml = `
-                <div class="flag-success">
-                    <h4>🏆 SUCCESS!</h4>
-                    <p><strong>Flag:</strong> <code>${data.flag}</code></p>
-                    <p><strong>Exploit Used:</strong> ${data.exploit_used}</p>
-                    <p>${data.message}</p>
-                </div>
-            `;
-            flagClass = 'success';
-        } else {
-            flagHtml = `
-                <div class="flag-error">
-                    <h4>❌ Access Denied</h4>
-                    <p><strong>Message:</strong> ${data.message}</p>
-                    <p><strong>Required Role:</strong> ${data.required_role || 'admin'}</p>
-                    <p><strong>Current Role:</strong> ${data.current_role || currentUser.role}</p>
-                    <p><strong>Current User:</strong> ${data.current_user || currentUser.sub}</p>
-                    <p><em>💡 Hint: The server trusts embedded RSA public keys in JWT headers...</em></p>
-                </div>
-            `;
-            flagClass = 'error';
-        }
-        
-        document.getElementById('flagResult').innerHTML = flagHtml;
-        document.getElementById('flagResult').className = `flag-box ${flagClass}`;
-        document.getElementById('flagSection').classList.remove('hidden');
-        
-    } catch (error) {
-        console.error('Flag request error:', error);
-        document.getElementById('flagResult').innerHTML = `
-            <div class="flag-error">
-                <h4>❌ Connection Error</h4>
-                <p>Failed to connect to server</p>
-                <p><strong>Error:</strong> ${error.message}</p>
-            </div>
-        `;
-        document.getElementById('flagResult').className = 'flag-box error';
-        document.getElementById('flagSection').classList.remove('hidden');
-    }
-}
 
 // Logout
 function logout() {
@@ -221,7 +166,6 @@ function logout() {
     // Clear data sections
     document.getElementById('userData').innerHTML = '';
     document.getElementById('adminContent').innerHTML = '';
-    document.getElementById('flagResult').innerHTML = '';
     
     // Show login section
     showSection('loginSection');
