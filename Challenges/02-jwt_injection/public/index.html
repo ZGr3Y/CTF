@@ -42,7 +42,6 @@
             <div class="actions">
                 <button onclick="loadUserData()">Load My Data</button>
                 <button onclick="accessAdminPanel()">Admin Panel</button>
-                <button onclick="tryJwtFlag()">🎯 Get JWT Flag</button>
                 <button onclick="logout()">Logout</button>
             </div>
         </div>
@@ -59,17 +58,12 @@
             <div id="adminContent" class="data-box"></div>
         </div>
 
-        <!-- JWT Flag Section -->
-        <div id="flagSection" class="card hidden">
-            <h3>🏆 JWT Challenge Result</h3>
-            <div id="flagResult" class="flag-box"></div>
-        </div>
+
 
         <!-- Challenge Info -->
         <div class="info-panel">
             <h3>ℹ️ Challenge Info</h3>
             <div class="challenge-info">
-                <p><strong>Target:</strong> GET /api/admin/jwt-flag</p>
                 <p><strong>Target:</strong> GET /admin</p>
                 <p><em>Use your penetration testing skills to find the vulnerability...</em></p>
             </div>
