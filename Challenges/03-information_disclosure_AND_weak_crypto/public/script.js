@@ -77,13 +77,12 @@ function displayUsersList(users) {
     const usersList = users.map(user => `
         <div class="user-item">
             <span>
-                <strong>Username:</strong> ${user.username} 
+                <strong>Username:</strong> ${user.username}
                 <strong>Ruolo:</strong> ${user.role}
-                <strong>Password:</strong> ${user.password}
             </span>
-            ${user.role !== 'admin' ? 
+            ${user.role !== 'admin' ?
                 `<button onclick="deleteUser(${user.id})">Elimina</button>
-                 <button onclick="viewUserData(${user.id})">Vedi Dati</button>` 
+                 <button onclick="viewUserData(${user.id})">Vedi Dati</button>`
                 : ''}
         </div>
     `).join('');
