@@ -74,19 +74,28 @@ function authenticate(req, res, next) {
     const token = req.headers['authorization'];
 
     if (token) {
-        const decoded = jwt.decode(token);
-        req.user = decoded;
-        next();
+        try {
+            const decoded = jwt.verify(token, SECRET_KEY);
+            req.user = decoded;
+            next();
+        } catch (err) {
+            return res.status(401).json({ message: 'Token non valido' });
+        }
     } else {
         res.status(401).json({ message: 'Token mancante' });
     }
 }
 
-// Endpoint vulnerabile a IDOR
+// Endpoint per ottenere i dati personali di un utente
 app.get('/api/users/:userId/data', authenticate, (req, res) => {
     const requestedId = parseInt(req.params.userId);
+
+    if (req.user.id !== requestedId && req.user.role !== 'admin') {
+        return res.status(403).json({ message: 'Accesso negato' });
+    }
+
     const user = users.find(u => u.id === requestedId);
-    
+
     if (user) {
         res.json({ personalData: user.personalData });
     } else {
