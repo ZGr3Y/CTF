@@ -1,4 +1,4 @@
-# CTF
+# Capture The Flags!
 
 This project contains a set of purposely vulnerable web services created for a bachelor degree Capture The Flag (CTF) event.  Every challenge is implemented in **Node.js** using the **Express** framework and is packaged as an independent **Docker** container so they can be run locally or deployed on a competition platform.
 
